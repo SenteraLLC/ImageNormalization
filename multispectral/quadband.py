@@ -67,7 +67,14 @@ def post_process(dirs, processed_subdir='processed'):
 			cal = 1./(k * int(csvrow[1]) * pow(2,int(csvrow[2])) * int(csvrow[3]))
 
 			im = Image.open(os.path.join(dirstring,jpgfile))
-			[_, img, _,] = im.split()
+
+			if im.mode == 'RGB':
+				[_, img, _,] = im.split()
+			elif im.mode == 'L':
+				[img] = im.split()
+			else:
+				raise Exception("Invalid image format: " + im.mode)
+
 			im.close()
 
 			temp = ImageMath.eval("float(a)", a=img)
