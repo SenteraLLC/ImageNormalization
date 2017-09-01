@@ -17,6 +17,10 @@ PIX4DCSV_FILENAME = 'pix4d.csv'
 NEWPIX4DCSV_FILENAME = 'newpix4d.csv'
 AUTOEXPOSURECSV_FILENAME = 'autoexposure.csv'
 
+# Defaults
+LEAKAGE_LIGHT_FACTOR = 0.00
+QE_FACTOR = 1.0
+
 # 655nm
 # LEAKAGE_LIGHT_FACTOR = 0.05
 # QE_FACTOR = 18.53
@@ -26,8 +30,8 @@ AUTOEXPOSURECSV_FILENAME = 'autoexposure.csv'
 # QE_FACTOR = 46.57
 
 # 800nm
-LEAKAGE_LIGHT_FACTOR = 0.12
-QE_FACTOR = 60.29
+# LEAKAGE_LIGHT_FACTOR = 0.12
+# QE_FACTOR = 60.29
 
 def post_process(dirs, processed_subdir='processed'):
 	for dirstring in dirs:
